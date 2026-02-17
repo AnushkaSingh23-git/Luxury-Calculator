@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #0f2027;
+}
+
+/* Animated Gradient Background */
+.background {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    #ff6ec4,
+    #7873f5,
+    #4facfe,
+    #43e97b
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  z-index: -1;
+  filter: blur(100px);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Calculator Container */
+.calculator {
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 25px;
+  width: 360px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Display */
+.display-container {
+  margin-bottom: 25px;
+}
+
+#display {
+  width: 100%;
+  height: 80px;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 32px;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+/* Buttons Grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Button Base */
+.btn {
+  height: 65px;
+  border: none;
+  border-radius: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Hover Glow */
+.btn:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Operators */
+.operator {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+.operator:hover {
+  box-shadow: 0 0 25px #ff512f;
+}
+
+/* Equals Button */
+.equals {
+  background: linear-gradient(135deg, #00dbde, #fc00ff);
+}
+
+.equals:hover {
+  box-shadow: 0 0 30px #fc00ff;
+}
+
+.zero {
+  grid-column: span 2;
+}
